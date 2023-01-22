@@ -35,6 +35,7 @@ class LoginController
     public function redirectPath()
     {
         return route(homeRoute());
+        // return route('admin.dashboard');
     }
 
     /**
@@ -109,5 +110,10 @@ class LoginController
         if (config('boilerplate.access.user.single_login')) {
             auth()->logoutOtherDevices($request->password);
         }
+    }
+
+    public function username()
+    {
+        return 'username';
     }
 }

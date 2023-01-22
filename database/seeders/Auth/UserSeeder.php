@@ -24,6 +24,7 @@ class UserSeeder extends Seeder
         User::create([
             'type' => User::TYPE_ADMIN,
             'name' => 'Super Admin',
+            'username' => 'superadmin',
             'email' => 'admin@admin.com',
             'password' => 'secret',
             'email_verified_at' => now(),
@@ -34,12 +35,14 @@ class UserSeeder extends Seeder
             User::create([
                 'type' => User::TYPE_USER,
                 'name' => 'Test User',
+                'username' => 'user',
                 'email' => 'user@user.com',
                 'password' => 'secret',
                 'email_verified_at' => now(),
                 'active' => true,
             ]);
         }
+
 
         $this->enableForeignKeys();
     }

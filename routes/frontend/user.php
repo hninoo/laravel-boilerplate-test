@@ -15,16 +15,16 @@ Route::group(['as' => 'user.', 'middleware' => ['auth', 'password.expires', conf
         ->middleware('is_user')
         ->name('dashboard')
         ->breadcrumbs(function (Trail $trail) {
-            $trail->parent('frontend.index')
-                ->push(__('Dashboard'), route('frontend.user.dashboard'));
+            // $trail->parent('frontend.index')
+            $trail->push(__('Dashboard'), route('frontend.user.dashboard'));
         });
 
-    Route::get('account', [AccountController::class, 'index'])
-        ->name('account')
-        ->breadcrumbs(function (Trail $trail) {
-            $trail->parent('frontend.index')
-                ->push(__('My Account'), route('frontend.user.account'));
-        });
+    // Route::get('account', [AccountController::class, 'index'])
+    //     ->name('account')
+    //     ->breadcrumbs(function (Trail $trail) {
+    //         $trail->parent('frontend.index')
+    //             ->push(__('My Account'), route('frontend.user.account'));
+    //     });
 
-    Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
+    // Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
 });

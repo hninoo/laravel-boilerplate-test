@@ -17,14 +17,7 @@
     @stack('after-styles')
 </head>
 <body>
-    @include('includes.partials.read-only')
-    @include('includes.partials.logged-in-as')
-    @include('includes.partials.announcements')
-
     <div id="app">
-        @include('frontend.includes.nav')
-        @include('includes.partials.messages')
-
         <main>
             @yield('content')
         </main>
